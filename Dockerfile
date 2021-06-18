@@ -38,12 +38,14 @@ WORKDIR /usr/src/app
 
 COPY --from=found_depends /usr/src/app/*.txt /tmp/efb/
 # trsverse later
+# pip cache at least pip 20.1
 RUN apt-get update \
 	&&apt-get install -y --no-install-recommends git \
 	&&apt-get install -y --no-install-recommends ffmpeg libmagic-dev libwebp-dev \
-	&&pip install --no-cache-dir -r /tmp/efb/ehforwarderbot.txt \
-	&&pip install --no-cache-dir -r /tmp/efb/efb-telegram-master.txt \
-	&&pip install --no-cache-dir -r /tmp/efb/efb-qq-slave.txt \
+	&&pip install -r /tmp/efb/ehforwarderbot.txt \
+	&&pip install -r /tmp/efb/efb-telegram-master.txt \
+	&&pip install -r /tmp/efb/efb-qq-slave.txt \
+	&&pip cache purge\
 	&&apt-get purge -y git \
 	&&apt-get autoremove -y \
 	&&apt-get clean -y \
