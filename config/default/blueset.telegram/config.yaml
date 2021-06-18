@@ -1,0 +1,22 @@
+# [Bot Token]
+# This is the token you obtained from @BotFather
+token: "xxxxxx"
+
+# [List of Admin User IDs]
+# ETM will only process messages and commands from users
+# listed below. This ID can be obtained from various ways
+# on Telegram.
+admins:
+    - xxxxxx
+
+flags:
+  network_error_prompt_interval: 0
+  your_message_on_slave: "mute"
+  animated_sticker: true
+  send_to_last_chat: enabled
+
+# request_kwargs:
+  # proxy_url: http://PROXY_HOST:PROXY_PORT
+  # optioal
+  # username: PROXY_USER
+  # password: PROXY_PASS

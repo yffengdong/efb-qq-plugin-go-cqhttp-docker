@@ -1,0 +1,45 @@
+{
+	"uin": 11111111,
+	"password": "password",
+	"encrypt_password": false,
+	"password_encrypted": "",
+	"enable_db": true,
+	"access_token": "bbbbbbbbbb",
+	"relogin": {
+		"enabled": true,
+		"relogin_delay": 3,
+		"max_relogin_times": 0
+	},
+	"_rate_limit": {
+		"enabled": false,
+		"frequency": 0,
+		"bucket_size": 0
+	},
+	"ignore_invalid_cqcode": false,
+	"force_fragmented": true,
+	"heartbeat_interval": 5,
+	"http_config": {
+		"enabled": true,
+		"host": "0.0.0.0",
+		"port": 5700,
+		"timeout": 5,
+		"post_urls": {
+			"http://127.0.0.1:8000": ""
+		}
+	},
+	"ws_config": {
+		"enabled": true,
+		"host": "0.0.0.0",
+		"port": 6700
+	},
+	"ws_reverse_servers": null,
+	"post_message_format": "array",
+	"debug": false,
+	"log_level": "error",
+	"web_ui": {
+		"enabled": true,
+		"host": "0.0.0.0",
+		"web_ui_port": 9999,
+		"web_input": false
+	}
+}
