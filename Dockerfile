@@ -41,11 +41,10 @@ COPY --from=found_depends /usr/src/app/*.txt /tmp/efb/
 # pip cache at least pip 20.1
 RUN apt-get update \
 	&&apt-get install -y --no-install-recommends git \
-	&&apt-get install -y --no-install-recommends ffmpeg libmagic-dev libwebp-dev \
+	&&apt-get install -y --no-install-recommends ffmpeg libmagic1 libwebp6 libwebpdemux2 libwebpmux3 \
 	&&pip install -r /tmp/efb/ehforwarderbot.txt \
 	&&pip install -r /tmp/efb/efb-telegram-master.txt \
 	&&pip install -r /tmp/efb/efb-qq-slave.txt \
-	&&pip cache purge\
 	&&apt-get purge -y git \
 	&&apt-get autoremove -y \
 	&&apt-get clean -y \
