@@ -2,7 +2,7 @@
 
 A little docker for efb-qq
 
-## How to Use?
+## How to use?
 1. git clone this repo
 2. Change files 
    ```
