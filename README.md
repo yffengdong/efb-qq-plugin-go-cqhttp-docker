@@ -3,7 +3,11 @@
 A little docker for efb-qq
 
 ## How to use?
-1. git clone this repo
+1. git clone this repo and update submodules
+   ```
+   cd go-cqhttp
+   git checkout [tag]
+   ```
 2. Change files 
    ```
    efb mods           - requirement/efb_package.txt
