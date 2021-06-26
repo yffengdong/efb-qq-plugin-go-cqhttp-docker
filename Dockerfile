@@ -5,21 +5,6 @@
 # python docker version
 ARG DOCKER_IMG="python:3.9.5-slim-buster"
 
-FROM ${DOCKER_IMG} as found_depends
-WORKDIR /usr/src/app
-COPY requirement/ ./
-# traverse later
-RUN apt-get update \
-	&&apt-get install -y --no-install-recommends git \
-	&&python3 -m pip install pip-tools \
-	&&pip-compile ehforwarderbot.in \
-	&&pip-compile efb-telegram-master.in \
-	&&pip-compile efb-qq-slave.in \
-	&&apt-get purge -y git \
-	&&apt-get autoremove -y \
-	&&apt-get clean -y \
-	&&rm -rf /var/lib/apt/lists/*
-
 # Product
 FROM ${DOCKER_IMG} as product
 
@@ -36,15 +21,13 @@ ENV PROFILE="default"
 
 WORKDIR /usr/src/app
 
-COPY --from=found_depends /usr/src/app/*.txt /tmp/efb/
+CCOPY requirement/ /tmp/efb/
 # trsverse later
 # pip cache at least pip 20.1
 RUN apt-get update \
 	&&apt-get install -y --no-install-recommends git \
 	&&apt-get install -y --no-install-recommends ffmpeg libmagic1 libwebp6 libwebpdemux2 libwebpmux3 \
-	&&pip install -r /tmp/efb/ehforwarderbot.txt \
-	&&pip install -r /tmp/efb/efb-telegram-master.txt \
-	&&pip install -r /tmp/efb/efb-qq-slave.txt \
+	&&pip install -r /tmp/efb/efb_package.txt \
 	&&apt-get purge -y git \
 	&&apt-get autoremove -y \
 	&&apt-get clean -y \
