@@ -11,7 +11,7 @@ services:
       - go-cqhttp
 
   go-cqhttp:
-    image: nanahira/go-cqhttp
+    build: ./go-cqhttp
     restart: always
     ports: 
       - "127.0.0.1:5700:5700"
