@@ -4,7 +4,9 @@ services:
   efb:
     build: .
     restart: always
-
+    
+#   ports:
+#     - "127.0.0.1:8000:8000"
     volumes: 
       - "./config:/usr/src/app/ehforwarderbot/profiles"
     depends_on:
@@ -13,9 +15,7 @@ services:
   go-cqhttp:
     build: ./go-cqhttp
     restart: always
-    ports: 
-      - "127.0.0.1:5700:5700"
-      - "127.0.0.1:8000:8000"
-      - "127.0.0.1:6700:6700"
+#   ports: 
+#     - "127.0.0.1:5700:5700"
     volumes:
       - "./cqhttp_data:/data"
