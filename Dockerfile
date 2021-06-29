@@ -26,7 +26,7 @@ COPY requirement/ /tmp/efb/
 # trsverse later
 # pip cache at least pip 20.1
 RUN apk add --no-cache --virtual .needed git \
-	&&apk add --no-cache libjpeg zlib openjpeg \
+	&&apk add --no-cache zlib tiff jpeg openjpeg freetype lcms2 libwebp tcl tk harfbuzz fribidi libimagequant libxcb libpng \
 	&&apk add --no-cache ffmpeg libmagic libwebp \
 	&&apk add --no-cache --virtual .build tiff-dev \
 	jpeg-dev \
