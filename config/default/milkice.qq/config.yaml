@@ -6,7 +6,7 @@ GoCQHttp:
   type: HTTP
   access_token:
   # GoCQHttp API接口地址/端口
-  api_root: http://127.0.0.1:5700/
+  api_root: http://go-cqhttp:5700/
   # efb-qq-slave 所监听的地址用于接收消息
-  host: 127.0.0.1
+  host: 0.0.0.0
   port: 8000
