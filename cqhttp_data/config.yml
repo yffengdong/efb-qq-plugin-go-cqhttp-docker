@@ -79,7 +79,7 @@ servers:
   # HTTP 通信设置
   - http:
       # 服务端监听地址
-      host: 127.0.0.1
+      host: 0.0.0.0
       # 服务端监听端口
       port: 5700
       # 反向HTTP超时时间, 单位秒
@@ -89,7 +89,7 @@ servers:
         <<: *default # 引用默认中间件
       # 反向HTTP POST地址列表
       post:
-      - url: '127.0.0.1:8000' # 地址
+      - url: 'efb:8000' # 地址
       #  secret: ''           # 密钥
       #- url: 127.0.0.1:5701 # 地址
       #  secret: ''          # 密钥
